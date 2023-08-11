@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Todo{% endblock %}
+
+{% block body %}
+    <h2 class="font-weight-normal text-center mt-5 mb-5">{{ event.name }}</h2>
+
+<div class="container d-flex justify-content-around">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="project-info-box mt-0">
+               
+                <p class="mb-0">{{ event.description }}</p>
+            </div><!-- / project-info-box -->
+
+            <div class="project-info-box mt-5">
+                
+                <p><b>Date: </b>{{ event.date ? event.date|date('Y-m-d H:i:s') : '' }}</p>
+                 <p><b>Address: </b> {{ event.address }}</p>
+                <p><b>Email: </b> {{ event.email }}</p>
+                 <p><b>Phone: </b> {{ event.phone }}</p>
+                  <p><b>Website: </b> {{ event.website }}</p>
+
+                
+            </div><!-- / project-info-box -->
+
+            
+        </div><!-- / column -->
+
+        <div class="col-md-7">
+            <img src="{{ event.image }}" style="width: 85%" alt="project-image" class="rounded mb-5">
+           
+        </div><!-- / column -->
+    </div>
+    
+</div>
+<div class=" d-flex justify-content-center mb-3">
+    <a class="btn btn-outline-dark rounded-0 mb-5 " href="{{ path('app_events_index') }}">Back to Main Page</a>
+
+    <a class="btn btn-outline-dark rounded-0 mb-5 ms-2" href="{{ path('app_events_edit', {'id': event.id}) }}">Edit</a>
+</div>
+    {{ include('events/_delete_form.html.twig') }}
+{% endblock %}
+
+
+
+

@@ -1,0 +1,22 @@
+* {
+    font-family: 'Overpass Mono', monospace;
+}
+
+.image {
+    transition: transform .2s;
+    margin: 0 auto;
+
+}
+
+.image:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.courusel {
+    height: 300px;
+}
+
+.poster {
+    object-fit: fill;
+}
